@@ -1,0 +1,11 @@
+---
+- name: Test connectivity to Windows Server 2019
+  hosts: all
+  tasks:
+    - name: 設定主機名稱變數
+      set_fact:
+        hostname: "{{ ansible_hostname }}"
+
+    - name: 顯示主機名稱
+      debug:
+        msg: "主機名稱是: {{ hostname }}"
